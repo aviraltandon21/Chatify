@@ -1,4 +1,4 @@
-# Chatify
+# Chatify (https://chatify-4150c.web.app/)
 
 ## `Section Links`
 - [Introduction](#Introduction)  
@@ -83,6 +83,7 @@ npm start
 ## `Contribution`
 
 There are many ways you can contribute.
+<br/>
 ⚡ Refactoring<br/>
 ⚡ Improving Responsive layout<br/>
 ⚡ Better flow of operations<br/>
