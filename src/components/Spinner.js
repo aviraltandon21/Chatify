@@ -1,0 +1,26 @@
+import React, { useEffect, useRef } from 'react';
+import Lottie from 'lottie-web';
+import animate from 'lottie-web';
+
+const Spinner = () => {
+    const container = useRef(null);
+  
+    useEffect(() => {
+      Lottie.loadAnimation({
+        container: container.current,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        animationData: require('./chat.json'),
+      });
+      animate.setSpeed(2.5);
+    }, []);
+  
+    return (
+        <div className="loading-icon-container">
+          <div ref={container} className="loading-icon"></div>
+        </div>
+    );
+  };
+  
+  export default Spinner;
