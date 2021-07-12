@@ -96,6 +96,6 @@ Feel free to send a pull request.
 
 For any issues feel free to [contact me](https://aviraltandon.com/)
 
-
+⭐ Thankyou so much ! Dont forget to star ⭐ the project if you loved it. ⭐
 
 
