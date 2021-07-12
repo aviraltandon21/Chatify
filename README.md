@@ -68,8 +68,8 @@ npm start
 
 ### Different themes
 <p>
-  <img src="images/img-3.png" width="450px"/>
-  <img src="images/img-4.png" width="450px"/>
+  <img src="images/img-3.png" width="400px"/>
+  <img src="images/img-4.png" width="400px"/>
 </p>
 
 ## `Upcoming-Features`
