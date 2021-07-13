@@ -87,7 +87,7 @@ npm start
 
 ## `Contribution`
 
-There are many ways you can contribute.
+There are many ways you can contribute.<br/>
 <br/>
 ⚡ Refactoring<br/><br/>
 ⚡ Improving Responsive layout<br/><br/>
@@ -102,7 +102,7 @@ Feel free to send a pull request.
 For any issues feel free to [contact me](https://aviraltandon.com/)
 <hr/>
 
-⭐ Thankyou so much ! 
+⭐ Thankyou so much ! <br/>
 Dont forget to star ⭐ the project if you loved it. ⭐
 
 
