@@ -12,19 +12,19 @@
 <br/>
 
 ## `Introduction`
-Chatify is a slack based chat application. You can make your channels/workspaces and can connect with your friends easily.<br/>
+Chatify is a slack based chat application. You can make your channels/workspaces and can connect with your friends easily.<br/><br/>
 
 ## `Features`
 💡 Authentication<br/><br/>
 💡 Create different channels/workspaces<br/><br/>
 💡 Image uploading in chat<br/><br/>
 💡 Emojis<br/><br/>
-💡 Users can easily change the app themes according to their preferences<br/>
+💡 Users can easily change the app themes according to their preferences<br/><br/>
 
 ## `Tech-Stack`
 - React JS
 - Firebase
-<br/>
+<br/><br/>
 
 ## `Installation`
 ### Step - 1
