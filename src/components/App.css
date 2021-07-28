@@ -5,6 +5,10 @@ body,
   padding: 1em;
 }
 
+.menu {
+  padding-bottom: 2em;
+}
+
 .log-reg-screen {
   height: 100vh;
 }
@@ -118,12 +122,19 @@ body,
   display: none !important;
 }
 
+.desktop-channel-menu {
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
 
 @media only screen and (max-width: 768px) {
   
   .channel-menu {
     display: block !important;
     margin-left: -60px !important;
+    overflow-y: scroll;
+    overflow-x: scroll;
   }
 
   .color-menu {
@@ -136,7 +147,7 @@ body,
   .message__form {
     
     margin-left: 12px !important;
-    
+    z-index: 50;
   }
 
   .app {

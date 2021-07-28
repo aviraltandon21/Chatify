@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import { Menu,Button } from 'semantic-ui-react'
 import UserPanel from './UserPanel'
 import Channels from './Channels'
+import DirectMessages from './DirectMessages'
 
 export default function SidePanel({ currentUser,primaryColor }) {
  const[showMenu,setShowMenu] = useState(0);
@@ -25,6 +26,7 @@ export default function SidePanel({ currentUser,primaryColor }) {
     <Button circular icon="close" style={{marginLeft: "80%",marginTop: "2%"}} onClick={()=> setShowMenu(0)} className="hideshowbutton"></Button>
       <UserPanel primaryColor={primaryColor} currentUser={currentUser} />
       <Channels currentUser={currentUser}/>
+      <DirectMessages currentUser={currentUser}/>
     </Menu>
 
 
@@ -37,12 +39,13 @@ export default function SidePanel({ currentUser,primaryColor }) {
       vertical
       className="desktop-channel-menu"
      
-      style={{ fontSize: '1.2rem',background: primaryColor }}
+      style={{ fontSize: '1.2rem',background: primaryColor}}
     >
 
     <Button circular icon="close" style={{marginLeft: "80%",marginTop: "2%"}} onClick={()=> setShowMenu(0)} className="hideshowbutton"></Button>
       <UserPanel primaryColor={primaryColor} currentUser={currentUser} />
       <Channels currentUser={currentUser}/>
+      <DirectMessages currentUser={currentUser}/>
     </Menu>
 
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-
+import { useSelector, useDispatch } from 'react-redux'
 import { Segment, Comment } from 'semantic-ui-react'
 import MessagesHeader from './MessagesHeader'
 import MessagesForm from './MessagesForm'
@@ -11,8 +11,11 @@ export default function Messages ({ currentUser, currentChannel }) {
     const [channel] = useState(currentChannel)
     const [messages, setMessages] = useState([])
     const [messagesRef] = useState(firebase.database().ref('messages'))
-   
+    const [privateMessagesRef] = useState(
+      firebase.database().ref('privateMessages')
+    )
     const messagesEndRef = useRef(null)
+    const isChannelPrivate = useSelector(state => state.channel.private)
     
 
     useEffect(() => {
@@ -28,7 +31,7 @@ export default function Messages ({ currentUser, currentChannel }) {
 
       const getAllMessagesListener = channelId => {
          
-        messagesRef
+        getMessagesRef()
           .child(channelId)
           .on('child_added', snap => {
             const message = snap.val()
@@ -36,6 +39,10 @@ export default function Messages ({ currentUser, currentChannel }) {
             setMessages(messages => [...messages, message])
           })
         
+      }
+
+      const getMessagesRef = () => {
+        return isChannelPrivate ? privateMessagesRef : messagesRef
       }
 
       useEffect(() => {
@@ -56,7 +63,7 @@ export default function Messages ({ currentUser, currentChannel }) {
       }
 
       const getChannelName = channel =>
-    channel ? `#${channel.name}` : '';
+    channel && `${!isChannelPrivate ? '#' : '@'} ${channel.name}`
 
     const getUniqueUsers = messages => {
       const uniqueUsers = messages.reduce((acc, message) => {
@@ -73,7 +80,7 @@ export default function Messages ({ currentUser, currentChannel }) {
 
     return (
         <>
-        <MessagesHeader channelName={getChannelName(channel)} users={getUniqueUsers(messages)}/>
+        <MessagesHeader channelName={getChannelName(channel)} users={getUniqueUsers(messages)} isChannelPrivate={isChannelPrivate}/>
         <Segment className="messages">
             <Comment.Group>
                 {renderMessages(messages)}
@@ -83,7 +90,8 @@ export default function Messages ({ currentUser, currentChannel }) {
         <MessagesForm
             currentChannel={currentChannel}
             currentUser={currentUser}
-            messagesRef={messagesRef}
+            getMessagesRef={getMessagesRef}
+            isChannelPrivate={isChannelPrivate}
         />
 
         </>

@@ -13,12 +13,14 @@ function App() {
     currentUser,
     currentChannel,
     primaryColor,
-    secondaryColor
+    secondaryColor,
+    isPrivateChannel
   } = useSelector(({ user,channel,colors }) => ({
     currentUser: user.currentUser,
     currentChannel: channel.currentChannel,
     primaryColor: colors.primaryColor,
-    secondaryColor: colors.secondaryColor
+    secondaryColor: colors.secondaryColor,
+    isPrivateChannel: channel.private
   }))
 
   return (
@@ -37,6 +39,7 @@ function App() {
       <Grid.Column width="4">
         <MetaPanel
           currentChannel={currentChannel}
+          isPrivateChannel={isPrivateChannel}
         />
       </Grid.Column>
     </Grid>

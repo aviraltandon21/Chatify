@@ -8,7 +8,8 @@ import {
 } from 'semantic-ui-react'
 
 export default function MetaPanel({
-  currentChannel
+  currentChannel,
+  isPrivateChannel
 }) {
   const [activeIndex, setActiveIndex] = React.useState(0)
 
@@ -17,6 +18,11 @@ export default function MetaPanel({
     const newIndex = activeIndex === index ? -1 : index
     setActiveIndex(newIndex)
   }
+
+  if (isPrivateChannel) {
+    return null
+  }
+
 
   return (
     <Segment loading={!currentChannel} className="channel-details">

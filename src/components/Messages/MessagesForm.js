@@ -16,6 +16,9 @@ class MessageForm extends React.Component {
     message: "",
     channel: this.props.currentChannel,
     user: this.props.currentUser,
+    // getMessagesRef: this.props.messagesRef,
+    // messagesRef: firebase.database().ref('messages'),
+    // privateMessagesRef: firebase.database().ref('privateMessages'),
     loading: false,
     errors: [],
     modal: false,
@@ -49,6 +52,10 @@ class MessageForm extends React.Component {
   handleTogglePicker = () => {
     this.setState({ emojiPicker: !this.state.emojiPicker });
   };
+
+  // getMessagesRef = () => {
+  //   return this.props.isPrivateChannel ? this.state.privateMessagesRef : this.state.messagesRef
+  // };
 
   handleAddEmoji = emoji => {
     const oldMessage = this.state.message;
@@ -90,12 +97,12 @@ class MessageForm extends React.Component {
   };
 
   sendMessage = () => {
-    const { messagesRef } = this.props;
+    const { getMessagesRef } = this.props;
     const { message, channel} = this.state;
 
     if (message) {
       this.setState({ loading: true });
-      messagesRef
+      getMessagesRef()
         .child(channel.id)
         .push()
         .set(this.createMessage())
@@ -117,14 +124,16 @@ class MessageForm extends React.Component {
   };
 
   getPath = () => {
-    
+    if (this.props.isPrivateChannel) {
+      return `chat/private/${this.state.channel.id}`;
+    } else {
       return "chat/public";
-    
+    }
   };
 
   uploadFile = (file, metadata) => {
     const pathToUpload = this.state.channel.id;
-    const ref = this.props.messagesRef;
+    const ref = this.props.getMessagesRef();
     const filePath = `${this.getPath()}/${uuid()}.jpg`;
 
     this.setState(
