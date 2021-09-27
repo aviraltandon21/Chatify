@@ -20,6 +20,8 @@ Chatify is a slack based chat application. You can make your channels/workspaces
 💡 Image uploading in chat<br/><br/>
 💡 Emojis<br/><br/>
 💡 Users can easily change the app themes according to their preferences<br/><br/>
+💡 Feature of sending direct(private) messages to users.<br/><br/>
+💡 Track of online/offline users.<br/><br/>
 
 ## `Tech-Stack`
 - React JS
@@ -79,11 +81,12 @@ npm start
 
 ## `Upcoming-Features`
 
-💡 Feature of sending direct(private) messages to users.<br/><br/>
-💡 Track of online/offline users.<br/><br/>
 💡 Notifications for unseen messages.<br/><br/>
+💡 Search bar for channel for searching the messages.<br/><br/>
 💡 Feature of adding favorite channels.<br/><br/>
 💡 Indicator when other user is typing.<br/><br/>
+💡 Feature for changing the profile picture ( for user )<br/><br/>
+💡 Profile page for user where he/she can update his/her perosnal details ( status , email address, etc )<br/><br/>
 
 ## `Contribution`
 
@@ -92,7 +95,7 @@ There are many ways you can contribute.<br/>
 ⚡ Refactoring<br/><br/>
 ⚡ Improving Responsive layout<br/><br/>
 ⚡ Better flow of operations<br/><br/>
-⚡ Add more features<br/><br/>
+⚡ Add more features ( specified above in - [Upcoming Features](#Upcoming-Features) )<br/><br/>
 ⚡ Finding bug or issues<br/><br/>
 
 Feel free to send a pull request.
