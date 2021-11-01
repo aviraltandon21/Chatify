@@ -1,4 +1,4 @@
-# Chatify (https://chatify-4150c.web.app/)
+# Chatify (https://chatify-2-7b036.web.app/)
 
 ## `Section Links`
 - [Introduction](#Introduction)  
